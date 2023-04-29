@@ -11,6 +11,9 @@
 <.list>
   <:item title="Location"><%= @store.location %></:item>
   <:item title="Identifier"><%= @store.identifier %></:item>
+  <:item :if={@store.products} title="Products">
+    <%= Enum.map(@store.product, &("#{&1.name}")) |> Enum.join(", ") %>
+  </:item>
 </.list>
 
 <.back navigate={~p"/stores"}>Back to stores</.back>
@@ -22,6 +25,7 @@
     title={@page_title}
     action={@live_action}
     store={@store}
+    products={@products}
     patch={~p"/stores/#{@store}"}
   />
 </.modal>
