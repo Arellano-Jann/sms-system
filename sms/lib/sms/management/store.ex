@@ -1,4 +1,6 @@
 defmodule Sms.Management.Store do
+  # defstruct id: nil, last_name: nil, first_name: nil, hire_date: nil, department: nil
+
   use Ecto.Schema
   import Ecto.Changeset
 

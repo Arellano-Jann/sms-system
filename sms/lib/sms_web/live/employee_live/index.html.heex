@@ -1,0 +1,12 @@
+<.header>
+    employees
+</.header>
+
+<.table
+    id="employees"
+    rows={@streams.employees}
+>
+<:col :let={{_id, employee}} label="Name"> 
+    <%= employee.name %>
+</:col>
+</.table>
