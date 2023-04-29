@@ -19,6 +19,7 @@ defmodule Sms.Management do
   """
   def list_stores do
     Repo.all(Store)
+    |> Repo.preload(:products)
   end
 
   @doc """
@@ -35,7 +36,10 @@ defmodule Sms.Management do
       ** (Ecto.NoResultsError)
 
   """
-  def get_store!(id), do: Repo.get!(Store, id)
+  def get_store!(id), do
+    Repo.get!(Store, id)
+    |> Repo.preload(:products)
+  end
 
   @doc """
   Creates a store.

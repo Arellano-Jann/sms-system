@@ -4,10 +4,12 @@ defmodule Sms.Management.Store do
   use Ecto.Schema
   import Ecto.Changeset
 
+  alias Sms.Items.Product
+
   schema "stores" do
     field :identifier, :integer
     field :location, :string
-    field :product_id, :id
+    has_many :products, Product
 
     timestamps()
   end
