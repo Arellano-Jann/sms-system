@@ -20,7 +20,7 @@ defmodule SmsWeb.ProductLive.FormComponent do
         phx-submit="save"
       >
         <.input field={@form[:name]} type="text" label="Name" />
-        <.input field={@form[:vendor_name]} type="text" label="Vendor name" />
+        <.input field={@form[:store_id]} type="select" options={Enum.map(@stores, &({&1.name, &1.id}))} label="Vendor name" />
         <.input field={@form[:wholesale_price]} type="number" label="Wholesale price" step="any" />
         <.input field={@form[:retail]} type="number" label="Retail" step="any" />
         <.input field={@form[:count]} type="number" label="Count" />
