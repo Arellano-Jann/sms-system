@@ -36,7 +36,7 @@ defmodule Sms.Management do
       ** (Ecto.NoResultsError)
 
   """
-  def get_store!(id), do
+  def get_store!(id) do
     Repo.get!(Store, id)
     |> Repo.preload(:products)
   end
